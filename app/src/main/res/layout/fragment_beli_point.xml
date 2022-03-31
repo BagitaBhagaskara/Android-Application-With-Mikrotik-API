@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".beliPointFragment">
+
+
+    <!-- TODO: Update blank fragment layout -->
+    <RelativeLayout
+        android:id="@+id/beliPointRelative"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_margin="10dp"
+        android:background="@color/white">
+
+        <TextView
+            android:id="@+id/textBeliPoint1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Point saat Ini\t: "
+            android:textStyle="bold"
+            android:textSize="14dp"/>
+
+        <TextView
+            android:id="@+id/banyakPoint"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@id/textBeliPoint1"
+            android:text="point"
+            android:textSize="14dp"
+            android:textColor="@color/mas"/>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/textBeliPoint3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/textBeliPoint1">
+            <EditText
+                android:id="@+id/MasukanJumlahPoint"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="number"
+                android:hint="Masukan jumlah point yang dibeli"/>
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <TextView
+            android:id="@+id/textBeliPoint"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/textBeliPoint3"
+            android:layout_marginTop="30dp"
+            android:text="Metode Pembayaran" />
+        <RadioGroup
+            android:id="@+id/radioButtonGrup"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/textBeliPoint">
+            <RadioButton
+                android:id="@+id/radioButtonTransfer"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Transfer" />
+
+            <RadioButton
+                android:id="@+id/radioButtonLangsung"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@id/radioButtonTransfer"
+                android:text="Langsung" />
+
+        </RadioGroup>
+
+
+        <Button
+            android:id="@+id/btnBeliPoint"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/radioButtonGrup"
+            android:text="Lanjut"
+            android:layout_margin="20dp"
+            style="@style/loginButton"/>
+    </RelativeLayout>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom">
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true">
+            <TextView
+                android:id="@+id/textPembelianStatus"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Lihat Status Pembelian Point"
+                android:textSize="14sp"/>
+
+            <ImageView
+                android:id="@+id/keranjang"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:layout_below="@id/textPembelianStatus"
+                android:layout_centerHorizontal="true"
+                android:layout_marginBottom="20dp"
+                android:src="@drawable/keranjang" />
+
+        </RelativeLayout>
+
+        
+
+
+
+    </RelativeLayout>
+
+
+
+
+
+
+
+
+
+</FrameLayout>

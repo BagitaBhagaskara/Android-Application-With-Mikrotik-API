@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "393215998203",
+    "project_id": "kresnahotspot",
+    "storage_bucket": "kresnahotspot.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:393215998203:android:dc89c4dfeeda6276c2585e",
+        "android_client_info": {
+          "package_name": "com.project.kresnahotspot"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "393215998203-9t25i2qs6gajkpat5eetq3aa6vle6buf.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDtDk3qF1OJ5COp-ECMwB7U0t9HiIen7gI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "393215998203-9t25i2qs6gajkpat5eetq3aa6vle6buf.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

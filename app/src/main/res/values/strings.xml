@@ -1,0 +1,47 @@
+<resources>
+    <string name="app_name">Kresna Hotspot</string>
+    <string name="login_username_hint">Username</string>
+    <string name="login_email_hint">Email</string>
+    <string name="login_password_hint">Password</string>
+    <string name="title_activity_login">LoginActivity</string>
+    <string name="prompt_username">Username</string>
+    <string name="prompt_email">Email</string>
+    <string name="prompt_password">Password</string>
+    <string name="action_sign_in">Sign in or register</string>
+    <string name="action_sign_in_short">Sign in</string>
+    <string name="welcome">"Welcome !"</string>
+    <string name="invalid_username">Not a valid username</string>
+    <string name="invalid_password">Password must be >5 characters</string>
+    <string name="login_failed">"Login failed"</string>
+    <string name="title_activity_home">home</string>
+    <!-- Strings used for fragments for navigation -->
+    <string name="first_fragment_label">First Fragment</string>
+    <string name="second_fragment_label">Second Fragment</string>
+    <string name="next">Next</string>
+    <string name="previous">Previous</string>
+
+    <string name="hello_first_fragment">Hello first fragment</string>
+    <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
+    <string name="profile">Profile</string>
+    <string name="notification">Notification</string>
+    <string name="beliVoucher">Beli Voucher Hotspot</string>
+    <string name="speed">Test Speed Internet</string>
+    <string name="status">Status Voucher</string>
+    <string name="chat">Hubungi Admin</string>
+    <string name="lainnya">Lainnya</string>
+    <string name="setting">Setting</string>
+    <string name="about">About Us</string>
+    <string name="logout">Logout</string>
+    <string name="nama_user">Nama User</string>
+    <string name="jumlahCoin">9999999999</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="managementUser">Management User</string>
+    <string name="pushNotification">Push Notification</string>
+    <string name="chatUser">Chat User</string>
+    <string name="tambahPoin">Permintaan Pembelian Point</string>
+    <string name="monitoring">Monitoring Traffic Mikrotik</string>
+    <string name="speedAdmin">Test Speed Internet</string>
+    <string name="nama_admin">Administrator</string>
+    <string name="beliPoint">Beli Point</string>
+</resources>

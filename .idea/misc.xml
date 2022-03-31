@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="..\:/Users/bagit/AndroidStudioProjects/KresnaHotspot/app/src/main/res/drawable/button_background_blue.xml" value="0.1390625" />
+        <entry key="..\:/Users/bagit/AndroidStudioProjects/KresnaHotspot/app/src/main/res/drawable/form_corner.xml" value="0.1390625" />
+        <entry key="..\:/Users/bagit/AndroidStudioProjects/KresnaHotspot/app/src/main/res/drawable/home_header_bg.xml" value="0.15989583333333332" />
+        <entry key="..\:/Users/bagit/AndroidStudioProjects/KresnaHotspot/app/src/main/res/drawable/ic_back_img.xml" value="0.1287037037037037" />
+        <entry key="..\:/Users/bagit/AndroidStudioProjects/KresnaHotspot/app/src/main/res/drawable/ic_baseline_chat_24.xml" value="0.1109375" />
+        <entry key="..\:/Users/bagit/AndroidStudioProjects/KresnaHotspot/app/src/main/res/drawable/ic_baseline_discount_24.xml" value="0.165625" />
+        <entry key="..\:/Users/bagit/AndroidStudioProjects/KresnaHotspot/app/src/main/res/drawable/ic_baseline_network_check_24.xml" value="0.1109375" />
+        <entry key="..\:/Users/bagit/AndroidStudioProjects/KresnaHotspot/app/src/main/res/drawable/ic_google_plus.xml" value="0.15989583333333332" />
+        <entry key="..\:/Users/bagit/AndroidStudioProjects/KresnaHotspot/app/src/main/res/drawable/ic_launcher_background.xml" value="0.1287037037037037" />
+        <entry key="..\:/Users/bagit/AndroidStudioProjects/KresnaHotspot/app/src/main/res/drawable/ic_login_hero.xml" value="0.1287037037037037" />
+        <entry key="..\:/Users/bagit/AndroidStudioProjects/KresnaHotspot/app/src/main/res/drawable/ic_register_hero.xml" value="0.13645833333333332" />
+        <entry key="..\:/Users/bagit/AndroidStudioProjects/KresnaHotspot/app/src/main/res/drawable/ic_side_bg.xml" value="0.15989583333333332" />
+        <entry key="..\:/Users/bagit/AndroidStudioProjects/KresnaHotspot/app/src/main/res/drawable/ic_store.xml" value="0.15989583333333332" />
+        <entry key="..\:/Users/bagit/AndroidStudioProjects/KresnaHotspot/app/src/main/res/drawable/payment.xml" value="0.14635416666666667" />
+        <entry key="..\:/Users/bagit/AndroidStudioProjects/KresnaHotspot/app/src/main/res/layout/activity_admin.xml" value="0.11" />
+        <entry key="..\:/Users/bagit/AndroidStudioProjects/KresnaHotspot/app/src/main/res/layout/activity_home.xml" value="0.25" />
+        <entry key="..\:/Users/bagit/AndroidStudioProjects/KresnaHotspot/app/src/main/res/layout/activity_login.xml" value="0.15" />
+        <entry key="..\:/Users/bagit/AndroidStudioProjects/KresnaHotspot/app/src/main/res/layout/activity_register.xml" value="0.16" />
+        <entry key="..\:/Users/bagit/AndroidStudioProjects/KresnaHotspot/app/src/main/res/layout/activity_tambah_profile_hotspot_admin.xml" value="0.33" />
+        <entry key="..\:/Users/bagit/AndroidStudioProjects/KresnaHotspot/app/src/main/res/layout/activity_tambah_voucher_admin.xml" value="0.33" />
+        <entry key="..\:/Users/bagit/AndroidStudioProjects/KresnaHotspot/app/src/main/res/layout/activity_transaksi_pembelian_point.xml" value="0.18" />
+        <entry key="..\:/Users/bagit/AndroidStudioProjects/KresnaHotspot/app/src/main/res/layout/dialog_beli_voucher.xml" value="0.25" />
+        <entry key="..\:/Users/bagit/AndroidStudioProjects/KresnaHotspot/app/src/main/res/layout/dialog_detail_voucher.xml" value="0.25" />
+        <entry key="..\:/Users/bagit/AndroidStudioProjects/KresnaHotspot/app/src/main/res/layout/dialog_konfirmasi_logout.xml" value="0.25" />
+        <entry key="..\:/Users/bagit/AndroidStudioProjects/KresnaHotspot/app/src/main/res/layout/dialog_konfirmasi_pembelian_point_admin.xml" value="0.209375" />
+        <entry key="..\:/Users/bagit/AndroidStudioProjects/KresnaHotspot/app/src/main/res/layout/dialog_pembayaran_point.xml" value="0.25" />
+        <entry key="..\:/Users/bagit/AndroidStudioProjects/KresnaHotspot/app/src/main/res/layout/dialog_pembelian_point.xml" value="0.25" />
+        <entry key="..\:/Users/bagit/AndroidStudioProjects/KresnaHotspot/app/src/main/res/layout/dialog_permintaan_pembelian_point_admin.xml" value="0.33" />
+        <entry key="..\:/Users/bagit/AndroidStudioProjects/KresnaHotspot/app/src/main/res/layout/fragment_about.xml" value="0.1" />
+        <entry key="..\:/Users/bagit/AndroidStudioProjects/KresnaHotspot/app/src/main/res/layout/fragment_admin_chat_user.xml" value="0.12552083333333333" />
+        <entry key="..\:/Users/bagit/AndroidStudioProjects/KresnaHotspot/app/src/main/res/layout/fragment_admin_hotspot.xml" value="0.1" />
+        <entry key="..\:/Users/bagit/AndroidStudioProjects/KresnaHotspot/app/src/main/res/layout/fragment_admin_management_paket.xml" value="0.22" />
+        <entry key="..\:/Users/bagit/AndroidStudioProjects/KresnaHotspot/app/src/main/res/layout/fragment_admin_management_user.xml" value="0.1" />
+        <entry key="..\:/Users/bagit/AndroidStudioProjects/KresnaHotspot/app/src/main/res/layout/fragment_admin_nofication.xml" value="0.1" />
+        <entry key="..\:/Users/bagit/AndroidStudioProjects/KresnaHotspot/app/src/main/res/layout/fragment_admin_point_user.xml" value="0.25" />
+        <entry key="..\:/Users/bagit/AndroidStudioProjects/KresnaHotspot/app/src/main/res/layout/fragment_admin_setting.xml" value="0.12552083333333333" />
+        <entry key="..\:/Users/bagit/AndroidStudioProjects/KresnaHotspot/app/src/main/res/layout/fragment_admin_speed.xml" value="0.12552083333333333" />
+        <entry key="..\:/Users/bagit/AndroidStudioProjects/KresnaHotspot/app/src/main/res/layout/fragment_admin_traffic_mikrotik.xml" value="0.22" />
+        <entry key="..\:/Users/bagit/AndroidStudioProjects/KresnaHotspot/app/src/main/res/layout/fragment_admin_voucher.xml" value="0.1" />
+        <entry key="..\:/Users/bagit/AndroidStudioProjects/KresnaHotspot/app/src/main/res/layout/fragment_beli_point.xml" value="0.2" />
+        <entry key="..\:/Users/bagit/AndroidStudioProjects/KresnaHotspot/app/src/main/res/layout/fragment_beli_voucher.xml" value="0.22" />
+        <entry key="..\:/Users/bagit/AndroidStudioProjects/KresnaHotspot/app/src/main/res/layout/fragment_chat_admin.xml" value="0.1" />
+        <entry key="..\:/Users/bagit/AndroidStudioProjects/KresnaHotspot/app/src/main/res/layout/fragment_logout_admin.xml" value="0.12447916666666667" />
+        <entry key="..\:/Users/bagit/AndroidStudioProjects/KresnaHotspot/app/src/main/res/layout/fragment_logout_user.xml" value="0.1953125" />
+        <entry key="..\:/Users/bagit/AndroidStudioProjects/KresnaHotspot/app/src/main/res/layout/fragment_notification.xml" value="0.1" />
+        <entry key="..\:/Users/bagit/AndroidStudioProjects/KresnaHotspot/app/src/main/res/layout/fragment_profil.xml" value="0.22" />
+        <entry key="..\:/Users/bagit/AndroidStudioProjects/KresnaHotspot/app/src/main/res/layout/fragment_setting.xml" value="0.1" />
+        <entry key="..\:/Users/bagit/AndroidStudioProjects/KresnaHotspot/app/src/main/res/layout/fragment_status_voucher.xml" value="0.22" />
+        <entry key="..\:/Users/bagit/AndroidStudioProjects/KresnaHotspot/app/src/main/res/layout/fragment_test_speed.xml" value="0.1" />
+        <entry key="..\:/Users/bagit/AndroidStudioProjects/KresnaHotspot/app/src/main/res/layout/layout_navigation_header.xml" value="0.25" />
+        <entry key="..\:/Users/bagit/AndroidStudioProjects/KresnaHotspot/app/src/main/res/layout/navigation_header.xml" value="0.19114583333333332" />
+        <entry key="..\:/Users/bagit/AndroidStudioProjects/KresnaHotspot/app/src/main/res/layout/navigation_header_admin.xml" value="0.18" />
+        <entry key="..\:/Users/bagit/AndroidStudioProjects/KresnaHotspot/app/src/main/res/layout/row_admin_permintaan_pembelian_point.xml" value="0.25" />
+        <entry key="..\:/Users/bagit/AndroidStudioProjects/KresnaHotspot/app/src/main/res/layout/row_konfirmasi_logout.xml" value="0.209375" />
+        <entry key="..\:/Users/bagit/AndroidStudioProjects/KresnaHotspot/app/src/main/res/layout/row_management_paket_admin.xml" value="0.22" />
+        <entry key="..\:/Users/bagit/AndroidStudioProjects/KresnaHotspot/app/src/main/res/layout/row_paket_voucher.xml" value="0.18" />
+        <entry key="..\:/Users/bagit/AndroidStudioProjects/KresnaHotspot/app/src/main/res/layout/row_transaksi_pembelian_point.xml" value="0.25" />
+        <entry key="..\:/Users/bagit/AndroidStudioProjects/KresnaHotspot/app/src/main/res/layout/row_voucher_penjualan.xml" value="0.25" />
+        <entry key="..\:/Users/bagit/AndroidStudioProjects/KresnaHotspot/app/src/main/res/menu/navigation_menu.xml" value="0.22" />
+        <entry key="..\:/Users/bagit/AndroidStudioProjects/KresnaHotspot/app/src/main/res/menu/navigation_menu_admin.xml" value="0.25" />
+        <entry key="..\:/Users/bagit/AndroidStudioProjects/KresnaHotspot/app/src/main/res/menu/navigation_menu_home.xml" value="0.25" />
+      </map>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="Android Studio default JDK" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/build/classes" />
+  </component>
+  <component name="ProjectType">
+    <option name="id" value="Android" />
+  </component>
+</project>

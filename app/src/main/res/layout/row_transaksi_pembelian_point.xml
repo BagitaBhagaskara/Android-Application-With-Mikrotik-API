@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:padding="10dp">
+    <LinearLayout
+        android:id="@+id/linearPembelianPoint"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/idPembelianPoint"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="id pembelian point"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Jumlah point yang dibeli: "/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Metode Pembayaran: "/>
+
+
+    </LinearLayout>
+    <LinearLayout
+        android:layout_toRightOf="@+id/linearPembelianPoint"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:paddingTop="20dp">
+
+        <TextView
+            android:id="@+id/pembelianPoint_Point"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Jumlah Point "/>
+        <TextView
+            android:id="@+id/pembelianPoint_Metode"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Metode Pembayaran "/>
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/pembelianPoint_tanggal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:gravity="right"
+        android:text="tanggal" />
+    <ImageView
+        android:id="@+id/pembelianPoint_panahKanan"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/panah_kanan"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"/>
+
+    <TextView
+        android:id="@+id/pembelianPoint_Status"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/pembelianPoint_panahKanan"
+        android:layout_alignParentRight="true"
+        android:layout_marginTop="20dp"
+
+        android:text="Status" />
+
+
+</RelativeLayout>

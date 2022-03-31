@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_home"
+    app:startDestination="@id/menuProfile">
+
+    <fragment
+        android:id="@+id/menuProfile"
+        android:name="com.project.kresnahotspot.profilFragment"
+        android:label="Profile"
+        tools:layout="@layout/fragment_profil" />
+    <fragment
+        android:id="@+id/menuNotification"
+        android:name="com.project.kresnahotspot.notificationFragment"
+        android:label="Notification"
+        tools:layout="@layout/fragment_notification" />
+    <fragment
+        android:id="@+id/menuPaket"
+        android:name="com.project.kresnahotspot.beliVoucherFragment"
+        android:label="Beli Voucher"
+        tools:layout="@layout/fragment_beli_voucher" />
+    <fragment
+        android:id="@+id/menuSpeed"
+        android:name="com.project.kresnahotspot.testSpeedFragment"
+        android:label="Test Speed"
+        tools:layout="@layout/fragment_test_speed" />
+    <fragment
+        android:id="@+id/menuStatus"
+        android:name="com.project.kresnahotspot.statusVoucherFragment"
+        android:label="Status Voucher"
+        tools:layout="@layout/fragment_status_voucher" />
+    <fragment
+        android:id="@+id/menuChat"
+        android:name="com.project.kresnahotspot.chatAdminFragment"
+        android:label="Chat Admin"
+        tools:layout="@layout/fragment_chat_admin" />
+    <fragment
+        android:id="@+id/menuSetting"
+        android:name="com.project.kresnahotspot.settingFragment"
+        android:label="Setting"
+        tools:layout="@layout/fragment_setting" />
+    <fragment
+        android:id="@+id/menuAbout"
+        android:name="com.project.kresnahotspot.AboutFragment"
+        android:label="About Us"
+        tools:layout="@layout/fragment_about" />
+    <fragment
+        android:id="@+id/menuBeliPoint"
+        android:name="com.project.kresnahotspot.beliPointFragment"
+        android:label="Beli Point"
+        tools:layout="@layout/fragment_beli_point" />
+    <fragment
+        android:id="@+id/menuLogout"
+        android:name="com.project.kresnahotspot.Logout_user"
+        android:label="logout_user"
+        tools:layout="@layout/fragment_logout_user" />
+</navigation>

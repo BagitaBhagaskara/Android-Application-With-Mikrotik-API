@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="10dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_horizontal">
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Point Anda              :"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Nama Paket            :"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Kecepatan               :"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Durasi Paket           : "/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Harga Paket (point): "/>
+
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <TextView
+                android:id="@+id/dialog_point"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Point"/>
+            <TextView
+                android:id="@+id/dialog_namaPaket"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Nama Paket"/>
+
+            <TextView
+                android:id="@+id/dialog_kecepatanPaket"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Kecepatan"/>
+            <TextView
+                android:id="@+id/dialog_durasiPaket"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Durasi Paket"/>
+            <TextView
+                android:id="@+id/dialog_hargaPaket"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Harga Paket (point)"/>
+
+
+        </LinearLayout>
+    </LinearLayout>
+        <Button
+            android:id="@+id/dialog_buttonBeli"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            style="@style/loginButton"
+            android:text="beli"
+            android:layout_marginTop="10dp"/>
+
+
+</LinearLayout>

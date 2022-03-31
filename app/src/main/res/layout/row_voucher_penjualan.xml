@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:padding="10dp"
+    android:layout_margin="5dp"
+    android:background="@color/hijau">
+
+    <LinearLayout
+        android:id="@+id/linearViewVoucher"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/penjualanVoucher"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="id penjualan voucher"
+            android:textStyle="bold" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Nama Voucher\t\t\t:"
+            android:textStyle="bold" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Durasi Voucher\t\t\t:"
+            android:textStyle="bold" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Kecepatan\t\t\t\t\t\t\t:"
+            android:textStyle="bold" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@+id/linearViewVoucher"
+        android:orientation="vertical"
+        android:paddingTop="20dp">
+
+        <TextView
+            android:id="@+id/penjualan_namaVoucher"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Nama Voucher " />
+
+        <TextView
+            android:id="@+id/penjualan_durasiVoucher"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Durasi Voucher " />
+
+        <TextView
+            android:id="@+id/penjualan_kecepatanVoucher"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Kecepatan " />
+
+    </LinearLayout>
+
+   <TextView
+       android:id="@+id/penjualan_tanggal"
+       android:layout_alignParentRight="true"
+       android:layout_width="wrap_content"
+       android:layout_height="wrap_content"
+       android:gravity="right"
+       android:text="tanggal"/>
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/panah_kanan"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"/>
+
+
+</RelativeLayout>

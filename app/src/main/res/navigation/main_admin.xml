@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_admin"
+    app:startDestination="@id/managementUser">
+
+    <fragment
+        android:id="@+id/managementUser"
+        android:name="com.project.kresnahotspot.adminFragmentManagementUser"
+        android:label="Management User"
+        tools:layout="@layout/fragment_admin_management_user" />
+    <fragment
+        android:id="@+id/pushNotification"
+        android:name="com.project.kresnahotspot.adminFragmentNofication"
+        android:label="Push Notification"
+        tools:layout="@layout/fragment_admin_nofication" />
+    <fragment
+        android:id="@+id/tambahPoint"
+        android:name="com.project.kresnahotspot.adminFragmentPointUser"
+        android:label="Permintan Pembelian Point"
+        tools:layout="@layout/fragment_admin_point_user" />
+    <fragment
+        android:id="@+id/menuChat"
+        android:name="com.project.kresnahotspot.adminFragmentChatUser"
+        android:label="Chat User"
+        tools:layout="@layout/fragment_admin_chat_user" />
+    <fragment
+        android:id="@+id/menuSpeed_admin"
+        android:name="com.project.kresnahotspot.adminFragmentSpeed"
+        android:label="Test Speed Internet"
+        tools:layout="@layout/fragment_admin_speed" />
+    <fragment
+        android:id="@+id/trafficMikrotik"
+        android:name="com.project.kresnahotspot.adminFragmentTrafficMikrotik"
+        android:label="Traffic Mikrotik"
+        tools:layout="@layout/fragment_admin_traffic_mikrotik" />
+    <fragment
+        android:id="@+id/menuSettingAdmin"
+        android:name="com.project.kresnahotspot.adminFragmentSetting"
+        android:label="Setting"
+        tools:layout="@layout/fragment_admin_setting" />
+    <fragment
+        android:id="@+id/menuLogoutAdmin"
+        android:name="com.project.kresnahotspot.Logout_admin"
+        android:label="Logout Admin"
+        tools:layout="@layout/fragment_logout_admin" />
+    <fragment
+        android:id="@+id/managementPaketHotspot"
+        android:name="com.project.kresnahotspot.adminFragmentManagementPaket"
+        android:label="Management Paket"
+        tools:layout="@layout/fragment_admin_management_paket" />
+</navigation>
