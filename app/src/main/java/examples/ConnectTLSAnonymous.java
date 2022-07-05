@@ -42,8 +42,10 @@ public class ConnectTLSAnonymous {
     }
 
     protected void connect() throws Exception {
-        con = ApiConnection.connect(AnonymousSocketFactory.getDefault(), Config.HOST, ApiConnection.DEFAULT_TLS_PORT, ApiConnection.DEFAULT_CONNECTION_TIMEOUT);
-        con.login(Config.USERNAME, Config.PASSWORD);
+        Config config =new Config();
+        config.ambilDataLogin();
+        con = ApiConnection.connect(AnonymousSocketFactory.getDefault(), config.HOST, ApiConnection.DEFAULT_TLS_PORT, ApiConnection.DEFAULT_CONNECTION_TIMEOUT);
+        con.login(config.USERNAME, config.PASSWORD);
     }
 
     protected void disconnect() throws Exception {

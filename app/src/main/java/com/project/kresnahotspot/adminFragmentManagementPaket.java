@@ -7,6 +7,7 @@ import android.os.Bundle;
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.GridLayoutManager;
+import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.view.LayoutInflater;
@@ -87,9 +88,9 @@ public class adminFragmentManagementPaket extends Fragment {
         View view=inflater.inflate(R.layout.fragment_admin_management_paket, container, false);
         recyclerView= view.findViewById(R.id.itemManagementPaket);
         managementPaketAdapter=new ManagementPaketAdapter(getContext(),list);
-        ButterKnife.bind(this,view);
-        GridLayoutManager gridLayoutManager=new GridLayoutManager(getContext(),2);
-        recyclerView.setLayoutManager(gridLayoutManager);
+        RecyclerView.LayoutManager layoutManager=new LinearLayoutManager(getContext(),LinearLayoutManager.VERTICAL,false);
+
+        recyclerView.setLayoutManager(layoutManager);
         recyclerView.setAdapter(managementPaketAdapter);
         
         ambilDataVoucher();
@@ -121,7 +122,8 @@ public class adminFragmentManagementPaket extends Fragment {
                                         documentSnapshot.getString("namaVoucher"),
                                         documentSnapshot.getString("kecepatanVoucher"),
                                         documentSnapshot.getString("durasiVoucher"),
-                                        documentSnapshot.getString("hargaVoucher"));
+                                        documentSnapshot.getString("hargaVoucher"),
+                                        documentSnapshot.getString("idConfig"));
                                 voucher.setId(documentSnapshot.getId());
                                 list.add(voucher);
                             }

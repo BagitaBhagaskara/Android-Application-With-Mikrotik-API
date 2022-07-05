@@ -17,8 +17,10 @@ public class TryWithResources  {
     }
 
     private void test() throws MikrotikApiException, InterruptedException {
-        try (ApiConnection con = ApiConnection.connect(SocketFactory.getDefault(), Config.HOST, ApiConnection.DEFAULT_PORT, 2000)) {
-            con.login(Config.USERNAME, Config.PASSWORD);
+        Config config =new Config();
+        config.ambilDataLogin();
+        try (ApiConnection con = ApiConnection.connect(SocketFactory.getDefault(), config.HOST, ApiConnection.DEFAULT_PORT, 2000)) {
+            con.login(config.USERNAME, config.PASSWORD);
             con.execute("/user/add name=eric");
         }
     }

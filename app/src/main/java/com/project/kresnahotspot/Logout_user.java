@@ -74,6 +74,7 @@ public class Logout_user extends Fragment {
             public void onClick(View view) {
                 auth.signOut();
                 startActivity(new Intent(getContext(),LoginActivity.class));
+                getActivity().getFragmentManager().popBackStack();
             }
         });
         return view ;

@@ -17,23 +17,13 @@
         android:icon="@drawable/buy"
         android:title="@string/beliVoucher"/>
 
-    <item android:id="@+id/menuSpeed"
-        android:icon="@drawable/fast"
-        android:title="@string/speed"/>
-
     <item android:id="@+id/menuStatus"
         android:icon="@drawable/museum"
         android:title="@string/status"/>
 
-    <item android:id="@+id/menuChat"
-        android:icon="@drawable/chat"
-        android:title="@string/chat"/>
 
     <item android:title="@string/lainnya">
         <menu>
-            <item android:id="@+id/menuSetting"
-                android:icon="@drawable/admin"
-                android:title="@string/setting"/>
 
             <item android:id="@+id/menuAbout"
                 android:icon="@drawable/information"

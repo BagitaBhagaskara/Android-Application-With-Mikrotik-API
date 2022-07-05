@@ -4,9 +4,12 @@
     android:layout_height="wrap_content"
     android:orientation="horizontal"
     android:padding="10dp"
-    android:layout_margin="5dp"
-    android:background="@color/hijau">
-
+    android:layout_marginVertical="5dp"
+    android:background="@color/colorPrimaryAdmin">
+<LinearLayout
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal">
     <LinearLayout
         android:id="@+id/linearViewVoucher"
         android:layout_width="wrap_content"
@@ -17,25 +20,62 @@
             android:id="@+id/penjualanVoucher"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="id penjualan voucher"
+            android:textColor="@color/white"
+            android:text="id penjualan voucher" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/white"
+            android:text="Nama Voucher"
             android:textStyle="bold" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Nama Voucher\t\t\t:"
+            android:textColor="@color/white"
+            android:text="Durasi Voucher"
             android:textStyle="bold" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Durasi Voucher\t\t\t:"
+            android:text="Kecepatan"
+            android:textColor="@color/white"
+            android:textStyle="bold" />
+
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="5dp"
+        android:orientation="vertical">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/white"
+            android:text=""
             android:textStyle="bold" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Kecepatan\t\t\t\t\t\t\t:"
+            android:textColor="@color/white"
+            android:text=":"
+            android:textStyle="bold" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/white"
+            android:text=":"
+            android:textStyle="bold" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:textColor="@color/white"
+            android:layout_height="wrap_content"
+            android:text=":"
             android:textStyle="bold" />
 
     </LinearLayout>
@@ -43,6 +83,7 @@
     <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="5dp"
         android:layout_toRightOf="@+id/linearViewVoucher"
         android:orientation="vertical"
         android:paddingTop="20dp">
@@ -50,6 +91,7 @@
         <TextView
             android:id="@+id/penjualan_namaVoucher"
             android:layout_width="wrap_content"
+            android:textColor="@color/white"
             android:layout_height="wrap_content"
             android:text="Nama Voucher " />
 
@@ -57,27 +99,32 @@
             android:id="@+id/penjualan_durasiVoucher"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:textColor="@color/white"
             android:text="Durasi Voucher " />
 
         <TextView
             android:id="@+id/penjualan_kecepatanVoucher"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:textColor="@color/white"
             android:text="Kecepatan " />
 
     </LinearLayout>
+</LinearLayout>
+
 
    <TextView
        android:id="@+id/penjualan_tanggal"
        android:layout_alignParentRight="true"
        android:layout_width="wrap_content"
        android:layout_height="wrap_content"
+       android:textColor="@color/white"
        android:gravity="right"
        android:text="tanggal"/>
     <ImageView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:src="@drawable/panah_kanan"
+        android:src="@drawable/panah_kanan_kuning"
         android:layout_alignParentRight="true"
         android:layout_centerVertical="true"/>
 

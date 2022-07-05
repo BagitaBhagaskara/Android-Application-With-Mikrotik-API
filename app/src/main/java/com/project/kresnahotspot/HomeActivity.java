@@ -46,6 +46,8 @@ import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
 
+import examples.Config;
+
 public class HomeActivity extends AppCompatActivity {
     FirebaseAuth auth;
     FirebaseFirestore db;
@@ -61,10 +63,13 @@ public class HomeActivity extends AppCompatActivity {
         db=FirebaseFirestore.getInstance();
         final DrawerLayout drawerLayout = findViewById(R.id.drawerLayout);
 
+
+
         findViewById(R.id.menu).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 drawerLayout.openDrawer(GravityCompat.START);
+
             }
         });
         NavigationView navigationView =findViewById(R.id.navigationView);
@@ -73,20 +78,6 @@ public class HomeActivity extends AppCompatActivity {
         coin=(TextView) headerView.findViewById(R.id.jumlahCoinUser);
         fotoUser=(ImageView) headerView.findViewById(R.id.imageProfile);
 
-//        fotoUser.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//                updateFotoUser();
-//
-//            }
-//        });
-
-//        simpan.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//                uploadFoto();
-//            }
-//        });
         navigationView.setItemIconTintList(null);
 
         NavController navController= Navigation.findNavController(this, R.id.naviHostFragment);
@@ -131,111 +122,5 @@ public class HomeActivity extends AppCompatActivity {
                     }
                 });
     }
-
-//    private void updateFotoUser(){
-//        final CharSequence[] items={"Ambil Foto","Pilih Dari Galeri","Batal"};
-//        AlertDialog.Builder builder=new AlertDialog.Builder(HomeActivity.this);
-//        builder.setTitle("Ubah Foto Profil ?");
-//        builder.setItems(items,(dialog,item)->{
-//            if (items[item].equals("Ambil Foto")){
-//                Intent i = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
-//                startActivityForResult(i,10);
-//            }
-//           else if (items[item].equals("Pilih Dari Galeri")){
-//                Intent i = new Intent(Intent.ACTION_PICK);
-//                i.setType("image/*");
-//                startActivityForResult(Intent.createChooser(i,"Pilih Foto"),20);
-//
-//            }
-//           else if (items[item].equals("Batal")){
-//               dialog.dismiss();
-//            }
-//        });
-//        builder.show();
-//
-//    }
-//
-//    @Override
-//    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
-//        super.onActivityResult(requestCode, resultCode, data);
-//        if(requestCode==10&&resultCode==RESULT_OK){
-//            final Bundle extras= data.getExtras();
-//            Thread thread = new Thread(()->{
-//                Bitmap bitmap =(Bitmap) extras.get("data");
-//                fotoUser.post(()->{
-//                    fotoUser.setImageBitmap(bitmap);
-//
-//                });
-//            });
-//            thread.start();
-//        }
-//        if(requestCode==20&&resultCode==RESULT_OK&&data!=null){
-//            final Uri path= data.getData();
-//            Thread thread = new Thread(()->{
-//                try{
-//                    InputStream inputStream=getContentResolver().openInputStream(path);
-//                    Bitmap bitmap= BitmapFactory.decodeStream(inputStream);
-//                    fotoUser.post(()->{
-//                        fotoUser.setImageBitmap(bitmap);
-//
-//                    });
-//                }
-//                catch (IOException e){
-//                    e.printStackTrace();
-//                }
-//            });
-//            thread.start();
-//        }
-//    }
-////
-//    private void uploadFoto (){
-//        fotoUser.setDrawingCacheEnabled(true);
-//        fotoUser.buildDrawingCache();
-//        Bitmap bitmap=((BitmapDrawable)fotoUser.getDrawable()).getBitmap();
-//        ByteArrayOutputStream byteArrayOutputStream =new ByteArrayOutputStream();
-//        bitmap.compress(Bitmap.CompressFormat.JPEG,100,byteArrayOutputStream);
-//        byte[]data=byteArrayOutputStream.toByteArray();
-//
-//        FirebaseStorage storage=FirebaseStorage.getInstance();
-//        StorageReference storageReference=storage.getReference("fotoUser").child("USR"+new Date().getTime()+".jpeg");
-//
-//        UploadTask uploadTask =storageReference.putBytes(data);
-//        uploadTask.addOnCompleteListener(new OnCompleteListener<UploadTask.TaskSnapshot>() {
-//            @Override
-//            public void onComplete(@NonNull Task<UploadTask.TaskSnapshot> task) {
-//                Toast.makeText(HomeActivity.this, "Foto Gagal Diuplaod", Toast.LENGTH_SHORT).show();
-//            }
-//        }).addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
-//            @Override
-//            public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
-//                if(taskSnapshot.getMetadata()!=null){
-//                    if(taskSnapshot.getMetadata().getReference()!=null){
-//                        taskSnapshot.getMetadata().getReference().getDownloadUrl()
-//                                .addOnCompleteListener(new OnCompleteListener<Uri>() {
-//                                    @Override
-//                                    public void onComplete(@NonNull Task<Uri> task) {
-//                                        FirebaseAuth firebaseAuth= FirebaseAuth.getInstance();
-//                                        uploadFotoFireStore(task.getResult().toString(),firebaseAuth.getCurrentUser().getUid());
-//                                    }
-//                                });
-//                    }
-//                }
-//            }
-//        });
-//
-//    }
-//    private void uploadFotoFireStore(String urlFoto, String id) {
-//        Map<String,Object>dataUser=new HashMap<>();
-//        dataUser.put("fotoUser",urlFoto);
-//        db.collection("dataUser").document(id)
-//                .set(dataUser)
-//                .addOnCompleteListener(new OnCompleteListener<Void>() {
-//                    @Override
-//                    public void onComplete(@NonNull Task<Void> task) {
-//                        Toast.makeText(HomeActivity.this, "Foto Berhasil Diuplaod", Toast.LENGTH_SHORT).show();
-//                    }
-//                });
-    //}
-
 
 }

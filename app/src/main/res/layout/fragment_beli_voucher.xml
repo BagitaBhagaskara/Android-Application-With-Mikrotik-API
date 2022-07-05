@@ -1,16 +1,41 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center"
     tools:context=".beliVoucherFragment"
-    android:background="@color/grey">
+    android:background="@color/white">
 
     <!-- TODO: Update blank fragment layout -->
-   <androidx.recyclerview.widget.RecyclerView
-       android:id="@+id/itemVoucher"
-       android:layout_width="wrap_content"
-       android:layout_height="wrap_content"
-       tools:listitem="@layout/row_paket_voucher" />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="vertical">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@color/biruTeal"
+            android:padding="10dp"
+            android:textStyle="bold"
+            android:layout_marginVertical="20dp"
+            android:textColor="@color/white"
+            android:text="PAKET VOUCHER KRESNA HOTSPOT"
+            android:textSize="20dp"/>
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:gravity="center">
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/itemVoucher"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            tools:listitem="@layout/row_paket_voucher" />
+    </LinearLayout>
 
-</FrameLayout>
+
+</LinearLayout>

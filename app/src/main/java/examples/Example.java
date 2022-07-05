@@ -10,8 +10,10 @@ import me.legrange.mikrotik.ApiConnection;
  public abstract class Example {
      
     public void connect() throws Exception {
-        con = ApiConnection.connect(SocketFactory.getDefault(), Config.HOST, ApiConnection.DEFAULT_PORT, 2000);
-        con.login(Config.USERNAME, Config.PASSWORD);
+        Config config =new Config();
+        config.ambilDataLogin();
+        con = ApiConnection.connect(SocketFactory.getDefault(), config.HOST, ApiConnection.DEFAULT_PORT, 2000);
+        con.login(config.USERNAME, config.PASSWORD);
     }
 
     public void disconnect() throws Exception {

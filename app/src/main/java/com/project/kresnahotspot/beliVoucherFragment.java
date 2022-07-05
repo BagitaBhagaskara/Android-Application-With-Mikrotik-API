@@ -102,6 +102,8 @@ private List<Voucher>list=new ArrayList<>();
     }
 
     private void ambilDataVoucher() {
+
+
         FirebaseFirestore db=FirebaseFirestore.getInstance();
         db.collection("Voucher")
                 .get()
@@ -116,7 +118,8 @@ private List<Voucher>list=new ArrayList<>();
                                         documentSnapshot.getString("namaVoucher"),
                                         documentSnapshot.getString("kecepatanVoucher"),
                                         documentSnapshot.getString("durasiVoucher"),
-                                        documentSnapshot.getString("hargaVoucher"));
+                                        documentSnapshot.getString("hargaVoucher"),
+                                        documentSnapshot.getString("idConfig"));
                                 voucher.setId(documentSnapshot.getId());
                                 list.add(voucher);
                             }

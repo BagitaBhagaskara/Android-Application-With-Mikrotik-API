@@ -1,14 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
+    android:layout_width="match_parent"
+    android:layout_height="230dp"
     android:orientation="vertical"
+    android:background="@drawable/corner_berli_voucher"
+    android:layout_marginVertical="5dp"
     xmlns:app="http://schemas.android.com/apk/res-auto">
-    <androidx.cardview.widget.CardView
-        android:layout_width="250dp"
-        android:layout_height="wrap_content"
-        app:cardElevation="5dp"
-        android:layout_margin="10dp">
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -23,30 +20,67 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:orientation="vertical">
-
                     <TextView
                         android:id="@+id/managementPaket_namaPaket"
                         android:layout_width="wrap_content"
                         android:layout_height="match_parent"
                         android:text="Nama Peket"
+                        android:textColor="@color/white"
                         android:layout_marginBottom="5dp"/>
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Kecepatan\t\t:"
+                        android:textColor="@color/white"
+                        android:text="Kecepatan"
                         android:textStyle="bold"/>
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Durasi\t\t\t\t\t:"
+                        android:textColor="@color/white"
+                        android:text="Durasi"
                         android:textStyle="bold"/>
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Harga\t\t\t\t\t:"
+                        android:textColor="@color/white"
+                        android:text="Harga"
+                        android:textStyle="bold"/>
+
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="5dp"
+                    android:orientation="vertical">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:text=""
+                        android:textColor="@color/white"
+                        android:layout_marginBottom="5dp"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/white"
+                        android:text=":"
+                        android:textStyle="bold"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/white"
+                        android:text=":"
+                        android:textStyle="bold"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/white"
+                        android:text=":"
                         android:textStyle="bold"/>
 
                 </LinearLayout>
@@ -54,7 +88,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:orientation="vertical"
-                    android:layout_marginStart="10dp">
+                    android:layout_marginStart="5dp">
 
                     <TextView
                         android:layout_width="wrap_content"
@@ -65,40 +99,43 @@
                         android:id="@+id/managementPaket_kecepatanPaket"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:textColor="@color/white"
                         android:text="kecepatan"
                         android:layout_marginTop="5dp"/>
 
                     <TextView
                         android:id="@+id/managementPaket_durasiPaket"
                         android:layout_width="wrap_content"
+                        android:textColor="@color/white"
                         android:layout_height="wrap_content"
                         android:text="Durasi"/>
 
                     <TextView
                         android:id="@+id/managementPaket_hargaPaket"
                         android:layout_width="wrap_content"
+                        android:textColor="@color/white"
                         android:layout_height="wrap_content"
                         android:text="Harga"/>
                 </LinearLayout>
         </LinearLayout>
             <LinearLayout
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
                 android:layout_gravity="center"
                 android:layout_marginTop="5dp">
                 <Button
-                    android:id="@+id/managementPaket_ButtonEdit"
-                    android:layout_width="wrap_content"
+                    android:id="@+id/managementPaket_ButtonDetail"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Edit Voucher"
+                    android:text="Detail Config Voucher"
+                    android:textSize="10dp"
                     android:layout_margin="5dp"
                     android:layout_gravity="center_horizontal"
-
                     style="@style/loginButton" />
                 <Button
                     android:id="@+id/managementPaket_ButtonDelete"
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="Delete Voucher"
                     android:layout_margin="5dp"
@@ -107,12 +144,5 @@
                     style="@style/loginButton"/>
             </LinearLayout>
         </LinearLayout>
-
-
-
-
-    </androidx.cardview.widget.CardView>
-
-
 
 </LinearLayout>

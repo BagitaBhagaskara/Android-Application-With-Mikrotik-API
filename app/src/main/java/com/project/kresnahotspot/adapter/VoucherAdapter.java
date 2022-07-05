@@ -3,6 +3,7 @@ package com.project.kresnahotspot.adapter;
 import static androidx.core.content.PackageManagerCompat.LOG_TAG;
 
 import android.content.Context;
+import android.content.SharedPreferences;
 import android.os.AsyncTask;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -27,6 +28,7 @@ import com.google.firebase.firestore.model.DocumentKey;
 import com.project.kresnahotspot.HomeActivity;
 import com.project.kresnahotspot.LoginActivity;
 import com.project.kresnahotspot.R;
+import com.project.kresnahotspot.hotspot_user_admin;
 import com.project.kresnahotspot.model.Penjualan;
 import com.project.kresnahotspot.model.Voucher;
 
@@ -51,7 +53,10 @@ public class VoucherAdapter extends RecyclerView.Adapter<VoucherAdapter.MyViewHo
     private List<Voucher> list;
     private String username,password;
     public String uptime,profile;
+    public boolean cekLoginMikrotik=true;
+    SharedPreferences getDataLoginMikrotik;
     private static final String LOG_TAG = "VoucherAdapter";
+    ApiConnection con;
 
 
     public VoucherAdapter(Context context, List<Voucher> list) {
@@ -74,13 +79,14 @@ public class VoucherAdapter extends RecyclerView.Adapter<VoucherAdapter.MyViewHo
         String durasi=voucher.getDurasi();
         String harga=voucher.getHarga();
 
-
+        getDataLoginMikrotik= context.getSharedPreferences("data_login_mikrotik", Context.MODE_PRIVATE);
         holder.nama.setText(nama);
         holder.kecepatan.setText(kecepatan);
         holder.durasi.setText(durasi);
-        holder.harga.setText(harga);
+        holder.harga.setText(harga+" Poin");
 
-
+        loginMikrotik loginMikrotik=new loginMikrotik();
+        loginMikrotik.execute();
 
         holder.beliVoucher.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -94,8 +100,6 @@ public class VoucherAdapter extends RecyclerView.Adapter<VoucherAdapter.MyViewHo
         View view = LayoutInflater.from(context).inflate(R.layout.dialog_beli_voucher,null);
         TextView point, nama,kecepatan,durasi,harga;
         Button beli;
-
-
         point=(TextView) view.findViewById(R.id.dialog_point);
         nama=(TextView) view.findViewById(R.id.dialog_namaPaket);
         kecepatan=(TextView)  view.findViewById(R.id.dialog_kecepatanPaket);
@@ -125,7 +129,10 @@ public class VoucherAdapter extends RecyclerView.Adapter<VoucherAdapter.MyViewHo
             public void onClick(View view) {
                 if(Integer.parseInt(point.getText().toString())<Integer.parseInt(harga.getText().toString())){
                     Toast.makeText(context, "Point tidak cukup, silahkah melakukan pembelian poin", Toast.LENGTH_SHORT).show();
-                }else{
+                }else if(cekLoginMikrotik==false){
+                    Toast.makeText(context, "Maaf kami sedang melakukan perbaikan, coba beberapa saat lagi", Toast.LENGTH_SHORT).show();
+                }
+                else{
                     String random=getRandomString(6);
                     username= random;
                     password=random;
@@ -141,11 +148,8 @@ public class VoucherAdapter extends RecyclerView.Adapter<VoucherAdapter.MyViewHo
                     }else{
                         Toast.makeText(context, "Masih proses, coba lagi.", Toast.LENGTH_SHORT).show();
                     }
-
-
                 }
             }
-
         });
 
     }
@@ -197,50 +201,38 @@ public class VoucherAdapter extends RecyclerView.Adapter<VoucherAdapter.MyViewHo
         return sb.toString();
     }
 
+    class loginMikrotik extends AsyncTask<Void,Void,Void>{
+        @Override
+        protected Void doInBackground(Void... voids) {
+            try
+            {
+                con =ApiConnection.connect(SocketFactory.getDefault(), getDataLoginMikrotik.getString("ipLoginMikrotik",null), getDataLoginMikrotik.getInt("portLoginMikrotikInt",0 ), 2000);
+                con.login(getDataLoginMikrotik.getString("usernameLoginMikrotik",null), getDataLoginMikrotik.getString("passwordLoginMikrotik",null));
+                Log.d(LOG_TAG, "Login Mikrotik Berhasil");
+            }
+            catch (Exception e)
+            {
+                cekLoginMikrotik=false;
+                Log.d(LOG_TAG, "erorr: "+e);
 
+                Log.d(LOG_TAG, "Anda belum terhubung pada jaringan wifi Kresna-Hotspot login mikrotik");
+            }
+            return null;
+        }
+    }
 
 
     class MyTask extends AsyncTask<Void, Void, Void> {
         @Override
-        protected void onPreExecute() {
-            super.onPreExecute();
-            //tvResult.setText("Begin");
-
-        }
-
-        @Override
         protected Void doInBackground(Void... params) {
-
-
             try {
-                try
-                {
-                    Log.d(LOG_TAG, "start");
-                    ApiConnection con = ApiConnection.connect(SocketFactory.getDefault(), Config.HOST, ApiConnection.DEFAULT_PORT, 2000);
-                    con.login(Config.USERNAME, Config.PASSWORD);
-                    Log.d(LOG_TAG, "start2");
-                    if(con.isConnected())
-                    {
-                        Log.d(LOG_TAG, "isConnected");
-                    }
-                    con.execute("/ip/hotspot/user/add server=hotspot1 name="+username+" password="+password+" profile="+profile+" limit-uptime="+uptime);
 
-                    con.close();
-
-                }
-                catch (Exception e)
-                {
-                    Log.d(LOG_TAG, "error"+uptime+"profile="+profile);
-                }
+                con.execute("/ip/hotspot/user/add server=hotspot1 name=" + username + " password=" + password + " profile=" + profile + " limit-uptime=" + uptime);
             } catch (Exception e) {
-                e.printStackTrace();
+                Log.d(LOG_TAG, "error" + uptime + "profile=" + profile);
+                Log.d(LOG_TAG, "error create Hotspot: "+e);
             }
             return null;
-        }
-        @Override
-        protected void onPostExecute(Void result) {
-            super.onPostExecute(result);
-            //tvResult.setText("End");
         }
     }
 
@@ -254,9 +246,6 @@ public class VoucherAdapter extends RecyclerView.Adapter<VoucherAdapter.MyViewHo
 
         FirebaseAuth auth=FirebaseAuth.getInstance();
         String idUser=auth.getCurrentUser().getUid();
-
-
-
 
 
         HashMap<String,Object>penjualanVoucher=new HashMap<>();
@@ -286,7 +275,7 @@ public class VoucherAdapter extends RecyclerView.Adapter<VoucherAdapter.MyViewHo
                                                 HashMap<String,Object>dataUser=new HashMap<>();
                                                 dataUser.put("coin",Integer.toString(sisa));
                                                 dataUser.put("emailUser",documentSnapshot.getString("emailUser"));
-                                                dataUser.put("isUser",documentSnapshot.getString("isUser"));
+                                                dataUser.put("statusLogin",documentSnapshot.getString("statusLogin"));
                                                 dataUser.put("namaUser",documentSnapshot.getString("namaUser"));
                                                 dataUser.put("phoneUser",documentSnapshot.getString("phoneUser"));
                                                 documentReference.set(dataUser);

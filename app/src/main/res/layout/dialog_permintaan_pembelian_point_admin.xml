@@ -31,7 +31,8 @@
         android:layout_height="match_parent"
         android:orientation="vertical"
         android:layout_gravity="center">
-        <ImageView
+
+        <com.github.chrisbanes.photoview.PhotoView
             android:id="@+id/dialog_pembelianPointAdmin_gambar"
             android:layout_width="150dp"
             android:layout_height="150dp"

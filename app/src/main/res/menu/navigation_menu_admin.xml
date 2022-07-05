@@ -1,38 +1,39 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:id="@+id/adminFragmentLoginMikrotik"
+        android:icon="@drawable/router_hitam"
+        android:title="Login Mikrotik"/>
+
+    <item android:id="@+id/hotspot"
+        android:icon="@drawable/wifi"
+        android:title="Hotspot"/>
+
+    <item android:id="@+id/managementPaketHotspot"
+        android:icon="@drawable/museum"
+        android:title="Management Paket Voucher"/>
+
+    <item android:id="@+id/adminFragmentAlatPembayaranPoin"
+        android:icon="@drawable/wallet_orange"
+        android:title="Alat Pembayaran Poin"/>
+    
+    <item android:id="@+id/tambahPoint"
+        android:icon="@drawable/buy"
+        android:title="@string/tambahPoin"/>
+
     <item android:id="@+id/managementUser"
         android:icon="@drawable/profile"
         android:title="@string/managementUser"/>
-
-    <item android:id="@+id/managementPaketHotspot"
-        android:icon="@drawable/profile"
-        android:title="Management Paket Hotspot"/>
 
     <item android:id="@+id/pushNotification"
         android:icon="@drawable/notification"
         android:title="@string/pushNotification"/>
 
-    <item android:id="@+id/tambahPoint"
-        android:icon="@drawable/buy"
-        android:title="@string/tambahPoin"/>
-
-    <item android:id="@+id/menuSpeed_admin"
-        android:icon="@drawable/fast"
-        android:title="@string/speedAdmin"/>
-
     <item android:id="@+id/trafficMikrotik"
-        android:icon="@drawable/museum"
+        android:icon="@drawable/fast"
         android:title="@string/monitoring"/>
-
-    <item android:id="@+id/menuChat"
-        android:icon="@drawable/chat"
-        android:title="@string/chatUser"/>
 
     <item android:title="@string/lainnya">
         <menu>
-            <item android:id="@+id/menuSettingAdmin"
-                android:icon="@drawable/admin"
-                android:title="@string/setting"/>
 
             <item android:id="@+id/menuLogoutAdmin"
                 android:icon="@drawable/logout"

@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main_admin"
-    app:startDestination="@id/managementUser">
+    app:startDestination="@id/adminFragmentLoginMikrotik">
 
     <fragment
         android:id="@+id/managementUser"
@@ -26,11 +26,6 @@
         android:label="Chat User"
         tools:layout="@layout/fragment_admin_chat_user" />
     <fragment
-        android:id="@+id/menuSpeed_admin"
-        android:name="com.project.kresnahotspot.adminFragmentSpeed"
-        android:label="Test Speed Internet"
-        tools:layout="@layout/fragment_admin_speed" />
-    <fragment
         android:id="@+id/trafficMikrotik"
         android:name="com.project.kresnahotspot.adminFragmentTrafficMikrotik"
         android:label="Traffic Mikrotik"
@@ -50,4 +45,19 @@
         android:name="com.project.kresnahotspot.adminFragmentManagementPaket"
         android:label="Management Paket"
         tools:layout="@layout/fragment_admin_management_paket" />
+    <fragment
+        android:id="@+id/hotspot"
+        android:name="com.project.kresnahotspot.adminFragmentHotspot"
+        android:label="Hotspot"
+        tools:layout="@layout/fragment_admin_hotspot" />
+    <fragment
+        android:id="@+id/adminFragmentLoginMikrotik"
+        android:name="com.project.kresnahotspot.adminFragmentLoginMikrotikAdmin"
+        android:label="Login Mikrotik"
+        tools:layout="@layout/fragment_admin_login_mikrotik_admin" />
+    <fragment
+        android:id="@+id/adminFragmentAlatPembayaranPoin"
+        android:name="com.project.kresnahotspot.adminFragmentAlatPembayaranPoin"
+        android:label="Alat Pembayaran Poin"
+        tools:layout="@layout/fragment_admin_alat_pembayaran_poin" />
 </navigation>

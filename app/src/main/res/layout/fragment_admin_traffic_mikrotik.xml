@@ -46,12 +46,13 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
-                android:paddingTop="50dp"
-
+                android:paddingHorizontal="10dp"
+                android:paddingVertical="10dp"
                 android:gravity="center">
                 <LinearLayout
-                    android:layout_width="100dp"
+                    android:layout_width="120dp"
                     android:layout_height="70dp"
+                    android:layout_margin="3dp"
                     android:orientation="vertical"
                     style="@style/formCorner"
                     android:gravity="center">
@@ -68,13 +69,13 @@
                         android:textColor="@color/white"
                         android:layout_margin="5dp"
                         android:textStyle="bold"
-                        android:textSize="20dp"
+                        android:textSize="14dp"
                         android:text="0 Mb"/>
                 </LinearLayout>
                 <LinearLayout
-                    android:layout_width="100dp"
+                    android:layout_width="120dp"
                     android:layout_height="70dp"
-                    android:layout_marginHorizontal="20dp"
+                    android:layout_margin="3dp"
                     android:orientation="vertical"
                     style="@style/formCorner"
                     android:gravity="center">
@@ -92,12 +93,13 @@
                         android:textColor="@color/white"
                         android:layout_margin="5dp"
                         android:textStyle="bold"
-                        android:textSize="20dp"
+                        android:textSize="14dp"
                         android:text="0 Mb"/>
                 </LinearLayout>
                 <LinearLayout
-                    android:layout_width="100dp"
+                    android:layout_width="120dp"
                     android:layout_height="70dp"
+                    android:layout_margin="3dp"
                     android:orientation="vertical"
                     style="@style/formCorner"
                     android:gravity="center">
@@ -114,7 +116,7 @@
                         android:textColor="@color/white"
                         android:layout_margin="5dp"
                         android:textStyle="bold"
-                        android:textSize="20dp"
+                        android:textSize="14dp"
                         android:text="0 Mb"/>
                 </LinearLayout>
             </LinearLayout>

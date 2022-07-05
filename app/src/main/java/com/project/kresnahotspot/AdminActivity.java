@@ -14,7 +14,12 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
 
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
 import com.google.android.material.navigation.NavigationView;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.firestore.DocumentSnapshot;
+import com.google.firebase.firestore.FirebaseFirestore;
 
 import java.util.List;
 import java.util.Map;
@@ -24,12 +29,17 @@ import me.legrange.mikrotik.MikrotikApiException;
 
 
 public class AdminActivity extends AppCompatActivity {
+    TextView namaAdminLogin;
+    FirebaseAuth auth;
+    FirebaseFirestore db;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_admin);
         final DrawerLayout drawerLayoutAdmin = findViewById(R.id.drawerLayout_admin);
-
+        db=FirebaseFirestore.getInstance();
+        auth=FirebaseAuth.getInstance();
         findViewById(R.id.menu_admin).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -37,6 +47,10 @@ public class AdminActivity extends AppCompatActivity {
             }
         });
         NavigationView navigationView =findViewById(R.id.navigationView_admin);
+        View headerView =navigationView.getHeaderView(0);
+        namaAdminLogin=(TextView) headerView.findViewById(R.id.namaAdmin);
+
+
         navigationView.setItemIconTintList(null);
 
         NavController navController= Navigation.findNavController(this, R.id.naviHostFragment_admin);
@@ -49,16 +63,34 @@ public class AdminActivity extends AppCompatActivity {
                 textTitleAdmin.setText(destination.getLabel());
             }
         });
-
-
     }
-    ApiConnection con;
-    private void test() throws MikrotikApiException {
-        List<Map<String, String>> results = con.execute("/interface/print");
-        for (Map<String, String> result : results) {
-            System.out.println(result);
-        }
+    @Override
+    protected void onStart() {
+        super.onStart();
+
+        auth.addAuthStateListener(new FirebaseAuth.AuthStateListener() {
+            @Override
+            public void onAuthStateChanged(@NonNull FirebaseAuth firebaseAuth) {
+                if (firebaseAuth.getCurrentUser()==null){
+                }
+                else {
+                    ambilDataNamaAdmin(firebaseAuth.getCurrentUser().getUid());
+                }
+            }
+        });
     }
 
+    private void ambilDataNamaAdmin(String uid) {
+        db.collection("dataUser").document(uid)
+                .get()
+                .addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
+                    @Override
+                    public void onComplete(@NonNull Task<DocumentSnapshot> task) {
+                        DocumentSnapshot documentSnapshot=task.getResult();
+                        String nama=documentSnapshot.getString("namaUser");
+                        namaAdminLogin.setText(nama);
+                    }
+                });
+    }
 
 }

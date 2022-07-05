@@ -8,6 +8,7 @@ import androidx.appcompat.app.AlertDialog;
 import androidx.fragment.app.Fragment;
 
 import android.provider.ContactsContract;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -40,10 +41,11 @@ public class beliPointFragment extends Fragment {
     EditText masukanJumlahPoint;
     Button beli;
     TextView point;
-    ImageView keranjang;
+    ImageView keranjang, history;
     RadioButton transfer,langsung,radioButton;
     RadioGroup radioGroup;
     String metode;
+    private static final String LOG_TAG = "Beli poin: ";
 
 
     // TODO: Rename parameter arguments, choose names that match
@@ -97,6 +99,14 @@ public class beliPointFragment extends Fragment {
         keranjang=(ImageView) view.findViewById(R.id.keranjang);
         transfer=(RadioButton) view.findViewById(R.id.radioButtonTransfer) ;
         langsung=(RadioButton)  view.findViewById(R.id.radioButtonLangsung);
+        history=(ImageView) view.findViewById(R.id.beliPointuser_history) ;
+
+        history.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(getContext(),statusPembelianPointUser.class));
+            }
+        });
 
         transfer.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
@@ -130,12 +140,11 @@ public class beliPointFragment extends Fragment {
 
                     jumlahPoint=(TextView) itemView.findViewById(R.id.dialog_jumlahPoint);
                     totalPembayaran=(TextView) itemView.findViewById(R.id.dialog_totalPembayaran);
-                    metodePembayaran=(TextView) itemView.findViewById(R.id.dialog_totalPembayaran);
+                    metodePembayaran=(TextView) itemView.findViewById(R.id.dialog_metodeDetailPembayaran);
                     buttonKonfirmasi=(Button) itemView.findViewById(R.id.dialog_buttonKonfirmasi);
                     radioGroup=(RadioGroup) itemView.findViewById(R.id.radioButtonGrup);
 
                     FirebaseAuth auth=FirebaseAuth.getInstance();
-
                     String jumlah=masukanJumlahPoint.getText().toString().trim();
                     String total=masukanJumlahPoint.getText().toString().trim();
 
@@ -149,13 +158,15 @@ public class beliPointFragment extends Fragment {
                     totalPembayaran.setText("Rp."+total);
                     metodePembayaran.setText(metode);
 
+
                     AlertDialog dialog=builder.create();
                     dialog.show();
 
                     buttonKonfirmasi.setOnClickListener(new View.OnClickListener() {
                         @Override
                         public void onClick(View view) {
-                                simpanPembelianPoint(idUser, jumlah,total,metode,tanggal,dialog);
+                            String metodeSet=metodePembayaran.getText().toString();
+                                simpanPembelianPoint(idUser, jumlah,total,metodeSet,tanggal,dialog);
                         }
                     });
                 }else{
@@ -199,29 +210,60 @@ public class beliPointFragment extends Fragment {
                 });
     }
 
-    private void simpanPembelianPoint(String idUser, String jumlah, String total, String metode, String tanggal, AlertDialog dialog) {
+    private void simpanPembelianPoint(String idUser, String jumlah, String total, String metodeSet, String tanggal, AlertDialog dialog) {
         FirebaseFirestore db = FirebaseFirestore.getInstance();
-        HashMap<String,Object>pembelianPoint=new HashMap<>();
-        pembelianPoint.put("idUser",idUser);
-        pembelianPoint.put("jumlahPembelianPoint",jumlah);
-        pembelianPoint.put("totalPembayaran",total);
-        pembelianPoint.put("metodePembayaran",metode);
-        pembelianPoint.put("status","Menunggu Pembayaran");
-        pembelianPoint.put("tanggal",tanggal);
-
-        db.collection("pembelianPoint")
-                .add(pembelianPoint)
-                .addOnCompleteListener(new OnCompleteListener<DocumentReference>() {
-                    @Override
-                    public void onComplete(@NonNull Task<DocumentReference> task) {
-                        if(task.isSuccessful()) {
-                            Toast.makeText(getContext(), "Konfirmasi pembelian berhasil, silahkan melakukan pembayaran!", Toast.LENGTH_SHORT).show();
-                            dialog.dismiss();
-                        }else{
-                            Toast.makeText(getContext(), "Konfirmasi Pembelian Gagal", Toast.LENGTH_SHORT).show();
+        Log.d(LOG_TAG,"metode set: "+metodeSet);
+        if(metodeSet.equals("Transfer")){
+            HashMap<String,Object>pembelianPoint=new HashMap<>();
+            pembelianPoint.put("idUser",idUser);
+            pembelianPoint.put("jumlahPembelianPoint",jumlah);
+            pembelianPoint.put("totalPembayaran",total);
+            pembelianPoint.put("metodePembayaran",metodeSet);
+            pembelianPoint.put("status","Menunggu Pembayaran");
+            pembelianPoint.put("tanggal",tanggal);
+            pembelianPoint.put("UrlBuktiPembelian",null);
+            pembelianPoint.put("alasanDitolak",null);
+            db.collection("pembelianPoint")
+                    .add(pembelianPoint)
+                    .addOnCompleteListener(new OnCompleteListener<DocumentReference>() {
+                        @Override
+                        public void onComplete(@NonNull Task<DocumentReference> task) {
+                            if(task.isSuccessful()) {
+                                Toast.makeText(getContext(), "Konfirmasi pembelian berhasil, silahkan melakukan pembayaran!", Toast.LENGTH_SHORT).show();
+                                dialog.dismiss();
+                            }else{
+                                Toast.makeText(getContext(), "Konfirmasi Pembelian Gagal", Toast.LENGTH_SHORT).show();
+                            }
                         }
-                    }
-                });
+                    });
+
+        }else if (metodeSet.equals("Langsung")){
+            HashMap<String,Object>pembelianPoint=new HashMap<>();
+            pembelianPoint.put("idUser",idUser);
+            pembelianPoint.put("jumlahPembelianPoint",jumlah);
+            pembelianPoint.put("totalPembayaran",total);
+            pembelianPoint.put("metodePembayaran",metodeSet);
+            pembelianPoint.put("status","Diproses");
+            pembelianPoint.put("tanggal",tanggal);
+            pembelianPoint.put("UrlBuktiPembelian",null);
+            pembelianPoint.put("alasanDitolak",null);
+            db.collection("pembelianPoint")
+                    .add(pembelianPoint)
+                    .addOnCompleteListener(new OnCompleteListener<DocumentReference>() {
+                        @Override
+                        public void onComplete(@NonNull Task<DocumentReference> task) {
+                            if(task.isSuccessful()) {
+                                Toast.makeText(getContext(), "Konfirmasi pembelian berhasil, silahkan melakukan pembayaran!", Toast.LENGTH_SHORT).show();
+                                dialog.dismiss();
+                            }else{
+                                Toast.makeText(getContext(), "Konfirmasi Pembelian Gagal", Toast.LENGTH_SHORT).show();
+                            }
+                        }
+                    });
+        }else{
+            Log.d(LOG_TAG,"galgall beli "+metodeSet);
+        }
+
     }
 
     private String ambilTanggal() {

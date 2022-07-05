@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:gravity="center_horizontal"
+    android:background="@color/biruTeal"
+    android:paddingHorizontal="20dp"
+    android:paddingVertical="15dp">
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textStyle="bold"
+        android:layout_marginBottom="10dp"
+        android:textColor="@color/white"
+        android:text="Masukan Data Alat Pembayaran"
+        android:textSize="14dp"/>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+        <EditText
+            android:id="@+id/dialogTambahPembayaran_Media"
+            style="@style/modifiedEditText"
+            android:hint="Media Pembayaran"
+            android:textColorHint="@color/white"
+            android:textColor="@color/white"
+            android:inputType="text"
+            android:maxLines="1" />
+        <EditText
+            android:id="@+id/dialogTambahPembayaran_NoPembayaran"
+            style="@style/modifiedEditText"
+            android:hint="Nomor Pembayaran"
+            android:textColorHint="@color/white"
+            android:textColor="@color/white"
+            android:inputType="text"
+            android:maxLines="1" />
+        <EditText
+            android:id="@+id/dialogTambahPembayaran_AtasNama"
+            style="@style/modifiedEditText"
+            android:hint="Atas Nama"
+            android:textColorHint="@color/white"
+            android:textColor="@color/white"
+            android:inputType="text"
+            android:maxLines="1" />
+
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:gravity="center"
+        android:orientation="horizontal">
+        <Button
+            android:id="@+id/dialogTambahPembayaran_buttonSimpan"
+            android:layout_width="100dp"
+            android:layout_height="40dp"
+            android:textColor="@color/white"
+            android:layout_margin="5dp"
+            android:text="Simpan"
+            android:background="@color/hijau"/>
+        <Button
+            android:id="@+id/dialogTambahPembayaran_buttonBatal"
+            android:layout_width="100dp"
+            android:layout_height="40dp"
+            android:layout_margin="5dp"
+            android:textColor="@color/white"
+            android:text="Batal"
+            android:background="@color/merah"/>
+    </LinearLayout>
+
+</LinearLayout>

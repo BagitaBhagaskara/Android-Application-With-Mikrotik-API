@@ -7,7 +7,44 @@
     android:layout_height="match_parent"
     tools:context=".tambahVoucher_admin"
     android:orientation="vertical">
-
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:gravity="center_vertical"
+        android:background="@color/colorPrimaryAdmin">
+        <ImageView
+            android:id="@+id/tambahVoucher_kembali"
+            android:layout_marginStart="5dp"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:src="@drawable/kembali_putih"/>
+    </LinearLayout>
+    <LinearLayout
+        android:id="@+id/tambahVoucher_warning"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:visibility="gone"
+        android:orientation="vertical">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="horizontal">
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/warning_orange"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Anda belum terhubung ke jaringan mikrotik"/>
+        </LinearLayout>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="silahkan periksa konfigurasi login Mikrotik"/>
+    </LinearLayout>
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -89,15 +126,69 @@
                         android:layout_height="wrap_content"
                         android:theme="@android:style/Theme.Holo.Light.DarkActionBar"/>
                 </LinearLayout>
-                <Button
-                    android:id="@+id/tambahVoucher_buttonTambahProfile"
+                <LinearLayout
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="@dimen/loginViewsMargin"
-                    android:layout_marginStart="20dp"
-                    android:textSize="10dp"
-                    android:text="Tambah Profile Hotspot" />
+                    android:layout_height="match_parent"
+                    android:layout_marginStart="10dp"
+                    android:gravity="center_horizontal"
+                    android:orientation="vertical">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textStyle="bold"
+                        android:textSize="12dp"
+                        android:layout_marginTop="@dimen/loginViewsMargin"
+                        android:text="Rate Limit :"/>
+                    <TextView
+                        android:id="@+id/tambahVoucher_configRateLimit"
+                        android:layout_width="wrap_content"
+                        android:textSize="12dp"
+                        android:layout_height="wrap_content"
+                        android:text="128K/1M"/>
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginStart="10dp"
+                    android:gravity="center_horizontal"
+                    android:orientation="vertical">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textStyle="bold"
+                        android:textSize="12dp"
+                        android:layout_marginTop="@dimen/loginViewsMargin"
+                        android:text="Uptime :"/>
+                    <TextView
+                        android:id="@+id/tambahVoucher_configUptime"
+                        android:layout_width="wrap_content"
+                        android:textSize="12dp"
+                        android:layout_height="wrap_content"
+                        android:text="168:00:00"/>
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginStart="10dp"
+                    android:gravity="center_horizontal"
+                    android:orientation="vertical">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textStyle="bold"
+                        android:textSize="12dp"
+                        android:layout_marginTop="@dimen/loginViewsMargin"
+                        android:text="Share User :"/>
+                    <TextView
+                        android:id="@+id/tambahVoucher_configShareUser"
+                        android:layout_width="wrap_content"
+                        android:textSize="12dp"
+                        android:layout_height="wrap_content"
+                        android:text="20"/>
+                </LinearLayout>
+
             </LinearLayout>
+
         </LinearLayout>
         <LinearLayout
             android:layout_width="match_parent"

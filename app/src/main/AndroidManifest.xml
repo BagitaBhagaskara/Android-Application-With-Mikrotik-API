@@ -15,14 +15,32 @@
 
     <application
         android:allowBackup="true"
-        android:icon="@mipmap/ic_launcher"
+        android:icon="@drawable/icon_router"
         android:label="KresnaHotspot"
-        android:roundIcon="@mipmap/ic_launcher_round"
+        android:roundIcon="@drawable/icon_router"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
-            android:name=".tambahProfileHotspot_admin"
+            android:name=".statusPembelianPointUser"
             android:exported="true" />
+        <activity
+            android:name=".profileHotspotAdmin"
+            android:exported="true" />
+        <activity
+            android:name=".historyPermintaanPoint_admin"
+            android:exported="true" />
+        <activity
+            android:name=".hotspot_active_admin"
+            android:exported="true" />
+        <activity
+            android:name=".generateHotspotAdmin"
+            android:exported="true" />
+        <activity
+            android:name=".hotspot_user_admin"
+            android:exported="true" />
+<!--        <activity-->
+<!--            android:name=".tambahProfileHotspot_admin"-->
+<!--            android:exported="true" />-->
         <activity
             android:name=".tambahVoucher_admin"
             android:exported="true" />

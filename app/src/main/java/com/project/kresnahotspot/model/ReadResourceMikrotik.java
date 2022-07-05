@@ -1,7 +1,10 @@
 package com.project.kresnahotspot.model;
 
 public class ReadResourceMikrotik {
-    String cpuLoad, uptime, memory, harddisk;
+    String cpuLoad;
+    String uptime;
+    String memory;
+    String harddisk;
     public  ReadResourceMikrotik(){
 
     }

@@ -3,8 +3,9 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:orientation="vertical"
-    android:layout_margin="10dp"
+    android:layout_marginVertical="5dp"
     android:background="@color/colorPrimary">
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -43,7 +44,9 @@
                 android:id="@+id/permintaanPembelianPoint_status"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:paddingHorizontal="3dp"
                 android:text="Status"
+                android:background="@color/white"
                 android:textStyle="bold"
                 android:layout_gravity="right"
                 android:layout_margin="10dp"/>
@@ -71,16 +74,33 @@
                     android:textStyle="bold"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Jumlah Point\t\t\t\t\t\t\t\t:"/>
+                    android:text="Jumlah Point"/>
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textStyle="bold"
-                    android:text="Metode Pembayaran\t\t:"/>
+                    android:text="Metode Pembayaran"/>
             </LinearLayout>
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:layout_marginStart="5dp">
+                <TextView
+                    android:textStyle="bold"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text=":"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textStyle="bold"
+                    android:text=":"/>
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginStart="5dp"
                 android:orientation="vertical">
                 <TextView
                     android:id="@+id/permintaanPembelianPoint_jumlahPoint"

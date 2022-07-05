@@ -1,6 +1,7 @@
 package com.project.kresnahotspot;
 
 import android.annotation.SuppressLint;
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
@@ -11,6 +12,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -83,9 +85,19 @@ public class adminFragmentPointUser extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View view=inflater.inflate(R.layout.fragment_admin_point_user, container, false);
+        ImageView history;
+        history=(ImageView) view.findViewById(R.id.permintaanPointUser_history);
+        history.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(getContext(),historyPermintaanPoint_admin.class));
+            }
+        });
+
         permintaanPoint=view.findViewById(R.id.itemPermintaanPointUser);
         permintaanPembelianAdapter=new PermintaanPembelianPointAdapter_Admin(getContext(),list);
         RecyclerView.LayoutManager layoutManager=new LinearLayoutManager(getContext(),LinearLayoutManager.VERTICAL,false);
+
 
         permintaanPoint.setLayoutManager(layoutManager);
         permintaanPoint.setAdapter(permintaanPembelianAdapter);
@@ -93,10 +105,9 @@ public class adminFragmentPointUser extends Fragment {
         ambilDataPembelianPoint();
 
         return view;
-
     }
 
-    private void ambilDataPembelianPoint() {
+    public void ambilDataPembelianPoint() {
         FirebaseFirestore db =FirebaseFirestore.getInstance();
         FirebaseAuth auth = FirebaseAuth.getInstance();
 
@@ -113,7 +124,9 @@ public class adminFragmentPointUser extends Fragment {
                                         queryDocumentSnapshot.getString("jumlahPembelianPoint"),
                                         queryDocumentSnapshot.getString("metodePembayaran"),
                                         queryDocumentSnapshot.getString("tanggal"),
-                                        queryDocumentSnapshot.getString("status"));
+                                        queryDocumentSnapshot.getString("status"),
+                                        queryDocumentSnapshot.getString("UrlBuktiPembelian"),
+                                        queryDocumentSnapshot.getString("alasanDitolak"));
                                 pembelianPoint.setIdUser(queryDocumentSnapshot.getString("idUser"));
                                 list.add(pembelianPoint);
                             }
@@ -123,5 +136,6 @@ public class adminFragmentPointUser extends Fragment {
                         }
                     }
                 });
+
     }
 }

@@ -121,7 +121,7 @@ public class RegisterActivity extends AppCompatActivity {
         dataUser.put("emailUser", email);
         dataUser.put("namaUser", nama);
         dataUser.put("coin","0");
-        dataUser.put("isUser","1");
+        dataUser.put("statusLogin","User");
 
         documentReference.set(dataUser)
                 .addOnSuccessListener(new OnSuccessListener<Void>() {

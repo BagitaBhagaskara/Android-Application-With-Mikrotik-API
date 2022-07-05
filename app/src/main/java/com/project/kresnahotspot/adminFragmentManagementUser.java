@@ -1,14 +1,30 @@
 package com.project.kresnahotspot;
 
+import android.annotation.SuppressLint;
 import android.os.Bundle;
 
+import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
+import android.widget.Toast;
 
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.firestore.QueryDocumentSnapshot;
+import com.google.firebase.firestore.QuerySnapshot;
+import com.project.kresnahotspot.adapter.ManagementUserAdapter_Admin;
+import com.project.kresnahotspot.adapter.statusPembelianPointUserAdapter;
+import com.project.kresnahotspot.model.ManagementUser;
+import com.project.kresnahotspot.model.PembelianPoint;
+
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
@@ -21,6 +37,9 @@ import me.legrange.mikrotik.MikrotikApiException;
  * create an instance of this fragment.
  */
 public class adminFragmentManagementUser extends Fragment {
+    private RecyclerView recyclerView;
+    private List<ManagementUser> list=new ArrayList<>();
+    private ManagementUserAdapter_Admin managementUserAdapter_admin;
 
 
 
@@ -70,9 +89,45 @@ public class adminFragmentManagementUser extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_admin_management_user, container, false);
+        View view=inflater.inflate(R.layout.fragment_admin_management_user, container, false);
+        recyclerView= view.findViewById(R.id.itemManagementUser);
+        managementUserAdapter_admin =new ManagementUserAdapter_Admin(getContext(),list);
+        RecyclerView.LayoutManager layoutManager=new LinearLayoutManager(getContext(),LinearLayoutManager.VERTICAL,false);
 
+        recyclerView.setLayoutManager(layoutManager);
+        recyclerView.setAdapter(managementUserAdapter_admin);
 
+        ambilDatauser();
+
+        return view;
+    }
+
+    private void ambilDatauser() {
+        FirebaseFirestore db=FirebaseFirestore.getInstance();
+        db.collection("dataUser")
+                .get()
+                .addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
+                    @SuppressLint("NotifyDataSetChanged")
+                    @Override
+                    public void onComplete(@NonNull Task<QuerySnapshot> task) {
+                        list.clear();
+                        if (task.isSuccessful()) {
+                            for (QueryDocumentSnapshot queryDocumentSnapshot : task.getResult()) {
+                                ManagementUser managementUser = new ManagementUser(
+                                        queryDocumentSnapshot.getString("coin"),
+                                        queryDocumentSnapshot.getString("emailUser"),
+                                        queryDocumentSnapshot.getString("namaUser"),
+                                        queryDocumentSnapshot.getString("phoneUser"),
+                                        queryDocumentSnapshot.getId()
+                                );
+                                list.add(managementUser);
+                            }
+                            managementUserAdapter_admin.notifyDataSetChanged();
+                        } else {
+                            Toast.makeText(getContext(), "Gagal Mengambil Data", Toast.LENGTH_SHORT).show();
+                        }
+                    }
+                });
     }
 
 

@@ -1,17 +1,35 @@
 package com.project.kresnahotspot.model;
 
 public class PembelianPoint {
-    String idPembelianPoint,jumlahPoint, metodePembayaran,tanggal,status,idUser,namaUser;
+    String idPembelianPoint,jumlahPoint, metodePembayaran,tanggal,status,idUser,namaUser,url,alasanTolak;
     public PembelianPoint(){
 
     }
 
-    public PembelianPoint(String idPembelianPoint, String jumlahPoint, String metodePembayaran, String tanggal, String status) {
+    public PembelianPoint(String idPembelianPoint, String jumlahPoint, String metodePembayaran, String tanggal, String status, String url,String alasanTolak) {
         this.idPembelianPoint = idPembelianPoint;
         this.jumlahPoint = jumlahPoint;
         this.metodePembayaran = metodePembayaran;
         this.tanggal = tanggal;
         this.status = status;
+        this.url = url;
+        this.alasanTolak=alasanTolak;
+    }
+
+    public String getAlasanTolak() {
+        return alasanTolak;
+    }
+
+    public void setAlasanTolak(String alasanTolak) {
+        this.alasanTolak = alasanTolak;
+    }
+
+    public String getUrl() {
+        return url;
+    }
+
+    public void setUrl(String url) {
+        this.url = url;
     }
 
     public String getNamaUser() {

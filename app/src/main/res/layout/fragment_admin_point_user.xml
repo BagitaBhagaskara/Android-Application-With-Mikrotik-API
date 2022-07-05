@@ -5,12 +5,39 @@
     android:layout_height="match_parent"
     tools:context=".adminFragmentPointUser">
 
-    <!-- TODO: Update blank fragment layout -->
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/itemPermintaanPointUser"
+    <LinearLayout
+        android:orientation="vertical"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        tools:listitem="@layout/row_admin_permintaan_pembelian_point"
-        android:padding="10dp"/>
+        android:layout_height="match_parent">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:background="@color/colorPrimaryAdmin">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="10dp"
+                android:layout_gravity="center"
+                android:gravity="right">
+                <ImageView
+                    android:id="@+id/permintaanPointUser_history"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:src="@drawable/history_putih"/>
+            </LinearLayout>
+        </LinearLayout>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/itemPermintaanPointUser"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="10dp"
+            tools:listitem="@layout/row_admin_permintaan_pembelian_point" />
+
+    </LinearLayout>
+
+
+
+    <!-- TODO: Update blank fragment layout -->
 
 </FrameLayout>

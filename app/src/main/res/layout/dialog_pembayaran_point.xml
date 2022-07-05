@@ -35,7 +35,7 @@
             android:layout_width="150dp"
             android:layout_height="150dp"
             android:layout_gravity="center"
-            android:src="@drawable/ic_baseline_image_24"/>
+            android:src="@drawable/add_photo_orange"/>
         <TextView
             android:id="@+id/hilang3"
             android:layout_width="wrap_content"
@@ -52,70 +52,44 @@
             style="@style/loginButton"
             android:layout_margin="5dp"/>
     </LinearLayout>
-
     <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="match_parent"
-        android:orientation="vertical"
-        android:layout_marginHorizontal="10dp"
-        android:layout_marginTop="10dp">
-        <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:orientation="vertical">
+        <LinearLayout
+            android:orientation="vertical"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Cara Pembayaran\t\t:"/>
+            android:layout_marginTop="@dimen/loginViewsMargin">
+            <!-- Text Label -->
+            <TextView
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                style="@style/modifiedEditText"
+                android:text="Pembayaran Via :"
+                android:layout_marginBottom="5dp" />
+            <!-- Spinner Element -->
+            <Spinner
+                android:id="@+id/dialog_pembayaranSpinner"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:theme="@android:style/Theme.Holo.Light.DarkActionBar"/>
+        </LinearLayout>
+        <Button android:id="@+id/dialogkonfirmasipembayaran_buttonDetail"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            style="@style/loginButton"
+            android:text="Detail pembayaran"/>
     </LinearLayout>
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         android:gravity="left"
         android:layout_margin="10dp">
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="vertical">
-
-            <TextView
-                android:id="@+id/hilang1"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Transfer bank BNI\t\t\t\t\t\t:" />
-
-            <TextView
-                android:id="@+id/hilang2"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Via Dana/Ovo/Link Aja\t\t:"/>
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Total pembayaran\t\t\t\t\t\t:"/>
         </LinearLayout>
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:layout_marginStart="5dp">
-
-            <TextView
-                android:id="@+id/dialog_pembayaranPointBank"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="077122345" />
-            <TextView
-                android:id="@+id/dialog_pembayaranDana"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="085823013333"/>
-            <TextView
-                android:id="@+id/dialog_pembayaranTotalPembayaran"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Total Pembayaran"
-                android:textColor="@color/mas"/>
-        </LinearLayout>
-
-    </LinearLayout>
     <TextView
         android:id="@+id/hilang4"
         android:layout_marginHorizontal="10dp"
@@ -123,7 +97,6 @@
         android:layout_height="wrap_content"
         android:textStyle="bold"
         android:text="Upload bukti pembayaran untuk dikonfirmasi oleh admin"/>
-
     <TextView
         android:id="@+id/tampil"
         android:layout_marginHorizontal="10dp"
@@ -132,4 +105,10 @@
         android:textStyle="bold"
         android:visibility="invisible"
         android:text="Silahkan menghubungi admin atau melakukan pembayaran langsung ke tempat."/>
+    <Button
+        android:id="@+id/dialogPembayaranClose"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Close"/>
 </LinearLayout>
+

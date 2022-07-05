@@ -1,17 +1,18 @@
 package com.project.kresnahotspot.model;
 
 public class Voucher {
-    String nama, kecepatan, durasi, harga, id,configUptime,configProfile;
+    String nama, kecepatan, durasi, harga, id,idConfig,configUptime,configProfile;
 
     public Voucher(){
 
     }
 
-    public Voucher(String nama, String kecepatan, String durasi, String harga) {
+    public Voucher(String nama, String kecepatan, String durasi, String harga,String idConfig) {
         this.nama = nama;
         this.kecepatan = kecepatan;
         this.durasi = durasi;
         this.harga = harga;
+        this.idConfig=idConfig;
     }
 
     public String getConfigUptime() {
@@ -28,6 +29,14 @@ public class Voucher {
 
     public void setConfigProfile(String configProfile) {
         this.configProfile = configProfile;
+    }
+
+    public String getIdConfig() {
+        return idConfig;
+    }
+
+    public void setIdConfig(String idConfig) {
+        this.idConfig = idConfig;
     }
 
     public String getId() {

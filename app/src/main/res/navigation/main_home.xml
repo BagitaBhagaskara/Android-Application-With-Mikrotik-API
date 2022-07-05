@@ -21,14 +21,9 @@
         android:label="Beli Voucher"
         tools:layout="@layout/fragment_beli_voucher" />
     <fragment
-        android:id="@+id/menuSpeed"
-        android:name="com.project.kresnahotspot.testSpeedFragment"
-        android:label="Test Speed"
-        tools:layout="@layout/fragment_test_speed" />
-    <fragment
         android:id="@+id/menuStatus"
         android:name="com.project.kresnahotspot.statusVoucherFragment"
-        android:label="Status Voucher"
+        android:label="Voucher Hotspot"
         tools:layout="@layout/fragment_status_voucher" />
     <fragment
         android:id="@+id/menuChat"
@@ -53,6 +48,6 @@
     <fragment
         android:id="@+id/menuLogout"
         android:name="com.project.kresnahotspot.Logout_user"
-        android:label="logout_user"
+        android:label="Logout"
         tools:layout="@layout/fragment_logout_user" />
 </navigation>

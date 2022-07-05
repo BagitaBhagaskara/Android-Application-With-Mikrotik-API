@@ -16,6 +16,4 @@ public class ApiDataException extends MikrotikApiException {
         super(msg, err);
     }
 
-    
-    
 }

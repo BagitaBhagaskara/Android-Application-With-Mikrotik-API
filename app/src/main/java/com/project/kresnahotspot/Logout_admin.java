@@ -73,6 +73,8 @@ public class Logout_admin extends Fragment {
             public void onClick(View view) {
                 auth.signOut();
                 startActivity(new Intent(getContext(),LoginActivity.class));
+                getActivity().getFragmentManager().popBackStack();
+
             }
         });
         return view;
